@@ -6,7 +6,8 @@ A responsive static marketing site for PGFinders, using the forest-green / warm-
 
 - `index.html` — homepage, value propositions, how-it-works, early-access form, and FAQs
 - `styles.css` — responsive layouts and brand styling
-- `script.js` — mobile navigation, current footer year, and local-preview waitlist guard
+- `script.js` — mobile navigation, current footer year, and waitlist API submission
+- `mail.js` — Express API that sends waitlist confirmation emails through SMTP
 - `thanks.html` — post-signup confirmation page
 - `privacy.html` — launch-stage privacy notice for early-access signups
 - `robots.txt` and `sitemap.xml` — basic discovery metadata
@@ -25,6 +26,21 @@ python3 -m http.server 8080
 Then visit `http://localhost:8080`.
 
 The waitlist form deliberately does not save data in local preview. This prevents accidentally implying that a signup was saved when no backend is attached.
+
+When `mail.js` is running locally on port `3000`, the waitlist form posts to
+`http://localhost:3000/api/subscribe` and redirects to `thanks.html` after the
+confirmation email is sent. If the API is deployed separately, define
+`window.PGFINDERS_API_URL` before loading `script.js`, for example:
+
+```html
+<script>
+  window.PGFINDERS_API_URL = 'https://api.example.com';
+</script>
+<script src="/script.js" defer></script>
+```
+
+The API URL should use HTTPS in production and must allow requests from the
+website's origin.
 
 ## Deploy with Netlify
 

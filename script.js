@@ -4,6 +4,7 @@
   const year = document.querySelector('#year');
   const form = document.querySelector('#waitlist-form');
   const formNote = document.querySelector('#form-note');
+  const submitButton = form?.querySelector('button[type="submit"]');
 
   if (year) year.textContent = String(new Date().getFullYear());
 
@@ -20,14 +21,45 @@
     }));
   }
 
-  // Local preview guard. Netlify-hosted deployments submit the native form to Netlify Forms.
-  if (form && formNote && ['localhost', '127.0.0.1', ''].includes(window.location.hostname)) {
-    form.addEventListener('submit', event => {
+  if (form && formNote && submitButton) {
+    form.addEventListener('submit', async event => {
       event.preventDefault();
       if (!form.reportValidity()) return;
-      formNote.textContent = 'Preview only: connect/deploy Netlify Forms to collect real signups. No email has been stored.';
+
+      const isLocalPreview = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
+      const configuredApiUrl = window.PGFINDERS_API_URL;
+      const apiUrl = configuredApiUrl ||
+        (isLocalPreview ? 'http://localhost:3000' : window.location.origin);
+      const email = new FormData(form).get('email');
+
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-busy', 'true');
+      formNote.textContent = 'Joining the list…';
       formNote.setAttribute('role', 'status');
-      formNote.style.color = '#e6c37b';
+      formNote.style.color = '';
+
+      try {
+        const response = await fetch(`${apiUrl}/api/subscribe`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          throw new Error(result.error || 'We could not complete your signup.');
+        }
+
+        window.location.href = '/thanks.html';
+      } catch (error) {
+        formNote.textContent = error instanceof Error
+          ? error.message
+          : 'We could not complete your signup. Please try again.';
+        formNote.style.color = '#f4a6a6';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.removeAttribute('aria-busy');
+      }
     });
   }
 })();
