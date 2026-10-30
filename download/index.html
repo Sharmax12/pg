@@ -66,12 +66,11 @@
         <h1>Find a stay.<br><em>Feel at home.</em></h1>
         <p class="download-lede">Take PGFinders with you. Explore accommodation, compare the details that matter and make a more informed choice about where you stay.</p>
         <div class="download-actions">
-          <a class="download-button" id="android-download" href="/downloads/pgfinders-android.apk" download="PGFinders.apk">
+          <a class="download-button" id="android-download" href="https://github.com/Sharmax12/application_Pg_finders/releases/download/v1.0.0/pgfinders-android.apk">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19v2h16v-2"/></svg>
             Download for Android
           </a>
-          <div class="download-meta" id="android-meta">Android APK · Early access release · Direct download</div>
-          <div class="download-unavailable" id="apk-unavailable" role="status">The Android download is being prepared. Please check back shortly or use PGFinders on the web.</div>
+          <div class="download-meta" id="android-meta">Android APK · Version 1.0.0 · 101 MB</div>
         </div>
         <div class="ios-note">
           <strong>Using an iPhone?</strong>
@@ -104,20 +103,7 @@
   </footer>
   <script>
     document.getElementById('year').textContent = String(new Date().getFullYear());
-    // Avoid showing a broken APK link until the binary has been uploaded to Netlify.
-    fetch('/downloads/pgfinders-android.apk', { method: 'HEAD', cache: 'no-store' })
-      .then(response => {
-        if (!response.ok) {
-          document.getElementById('android-download').setAttribute('aria-disabled', 'true');
-          document.getElementById('android-download').style.opacity = '.55';
-          document.getElementById('android-download').addEventListener('click', event => event.preventDefault());
-          document.getElementById('apk-unavailable').style.display = 'block';
-          document.getElementById('android-meta').textContent = 'Android APK · Release upload pending';
-        }
-      })
-      .catch(() => {
-        document.getElementById('apk-unavailable').style.display = 'block';
-      });
+    // The APK is hosted as a public GitHub Release asset.
   </script>
 </body>
 </html>
