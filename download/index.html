@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173d32">
+  <meta name="description" content="Download PGFinders for Android. Discover PG accommodation with clearer details about location, rent, amenities and everyday living.">
+  <meta property="og:title" content="Get the PGFinders app">
+  <meta property="og:description" content="Find a stay. Feel at home. Download PGFinders for Android.">
+  <meta property="og:type" content="website">
+  <title>Download PGFinders — Find a Better Stay</title>
+  <link rel="icon" href="/assets/pgfinders-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .download-page{min-height:calc(100vh - 160px);padding:76px 0 90px;background:var(--paper)}
+    .download-layout{display:grid;grid-template-columns:1fr .85fr;align-items:center;gap:75px}
+    .download-copy{max-width:570px}
+    .download-copy h1{font:600 clamp(44px,5.4vw,68px)/1.06 'Manrope',sans-serif;letter-spacing:-2.8px;margin:22px 0 18px}
+    .download-copy h1 em{font-family:Georgia,serif;font-weight:400;color:var(--gold);letter-spacing:-2px}
+    .download-lede{font-size:15px;line-height:1.85;color:var(--muted);max-width:490px}
+    .download-actions{display:grid;gap:12px;max-width:390px;margin-top:30px}
+    .download-button{display:flex;align-items:center;justify-content:center;gap:13px;min-height:58px;padding:15px 20px;border-radius:9px;background:var(--green);color:var(--white);font-weight:700;font-size:14px;transition:transform .2s,background .2s}
+    .download-button:hover{transform:translateY(-2px);background:var(--deep)}
+    .download-button svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .download-meta{font-size:11px;color:#7b847b;line-height:1.7}
+    .download-unavailable{display:none;margin-top:12px;padding:12px 14px;border:1px solid #e5c98f;border-radius:9px;background:#fff8e9;color:#684d20;font-size:12px;line-height:1.6}
+    .ios-note{max-width:390px;margin-top:22px;padding:18px 19px;border:1px solid var(--line);border-radius:12px;background:#fffdf8}
+    .ios-note strong{display:block;font:700 13px 'Manrope',sans-serif;margin-bottom:5px}
+    .ios-note p{font-size:12px;line-height:1.7;color:var(--muted);margin:0}
+    .ios-note a{display:inline-block;margin-top:8px;color:var(--green);font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+    .download-art{min-height:440px;padding:38px;border-radius:22px;background:var(--green);color:var(--white);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+    .download-art:before,.download-art:after{content:"";position:absolute;border:1px solid rgba(230,195,123,.25);border-radius:50%;pointer-events:none}
+    .download-art:before{width:400px;height:400px;right:-190px;top:-180px}
+    .download-art:after{width:520px;height:520px;right:-250px;top:-240px}
+    .download-art>*{position:relative;z-index:1}
+    .download-art-kicker{font-size:9px;letter-spacing:2px;font-weight:800;color:var(--gold-light)}
+    .download-art h2{font:600 37px/1.15 'Manrope',sans-serif;letter-spacing:-1.3px;max-width:350px;margin:0 0 14px}
+    .download-art p{font-size:13px;line-height:1.8;color:#d0d9d1;max-width:340px;margin:0}
+    .download-perks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:27px}
+    .download-perks span{border:1px solid rgba(255,255,255,.18);border-radius:9px;padding:13px 12px;font-size:11px;color:#f5f0e6}
+    .download-art-foot{font-size:9px;letter-spacing:1.6px;color:#aebbaf;font-weight:700}
+    .download-help{margin-top:35px;padding-top:20px;border-top:1px solid var(--line);max-width:390px;font-size:11px;color:#7b847b;line-height:1.7}
+    .download-help a{color:var(--green);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:800px){.download-page{padding:52px 0 70px}.download-layout{grid-template-columns:1fr;gap:30px}.download-art{min-height:340px;padding:29px}.download-copy h1{font-size:clamp(44px,9vw,62px)}}
+    @media(max-width:480px){.download-page{padding-top:38px}.download-art{min-height:320px}.download-art h2{font-size:31px}.download-perks span{font-size:10px;padding:11px 9px}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="/" aria-label="PGFinders home">
+        <img src="/assets/pgfinders-mark.svg" alt="" width="44" height="44">
+        <span class="brand-word"><strong>PG</strong><span>Finders</span></span>
+      </a>
+      <a class="nav-cta" href="/">Back to website <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main id="main" class="download-page">
+    <div class="container download-layout">
+      <section class="download-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> PGFinders for mobile</span>
+        <h1>Find a stay.<br><em>Feel at home.</em></h1>
+        <p class="download-lede">Take PGFinders with you. Explore accommodation, compare the details that matter and make a more informed choice about where you stay.</p>
+        <div class="download-actions">
+          <a class="download-button" id="android-download" href="/downloads/pgfinders-android.apk" download="PGFinders.apk">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19v2h16v-2"/></svg>
+            Download for Android
+          </a>
+          <div class="download-meta" id="android-meta">Android APK · Early access release · Direct download</div>
+          <div class="download-unavailable" id="apk-unavailable" role="status">The Android download is being prepared. Please check back shortly or use PGFinders on the web.</div>
+        </div>
+        <div class="ios-note">
+          <strong>Using an iPhone?</strong>
+          <p>The iOS app is not yet available for public installation. We’re working towards iOS distribution. In the meantime, you can explore PGFinders through the website.</p>
+          <a href="/">Explore PGFinders on the web →</a>
+        </div>
+        <div class="download-help">Having trouble installing? Android may ask you to allow installation from your browser. Only install APKs downloaded from the official PGFinders website. <a href="/privacy.html">Privacy notice</a></div>
+      </section>
+      <aside class="download-art" aria-label="PGFinders app highlights">
+        <div class="download-art-kicker">DISCOVER · COMPARE · FEEL AT HOME</div>
+        <div>
+          <h2>A better start to finding your stay.</h2>
+          <p>Clearer information. Better comparisons. A little more confidence in your next move.</p>
+          <div class="download-perks">
+            <span>⌂ &nbsp;Discover PGs</span>
+            <span>₹ &nbsp;Compare pricing</span>
+            <span>⌖ &nbsp;Explore locations</span>
+            <span>♡ &nbsp;Save listings</span>
+          </div>
+        </div>
+        <div class="download-art-foot">MADE FOR STUDENTS & YOUNG PROFESSIONALS</div>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> PGFinders. All rights reserved.</span>
+      <span><a href="/" style="color:#c5cfc6">Home</a> &nbsp;·&nbsp; <a href="/privacy.html" style="color:#c5cfc6">Privacy</a></span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = String(new Date().getFullYear());
+    // Avoid showing a broken APK link until the binary has been uploaded to Netlify.
+    fetch('/downloads/pgfinders-android.apk', { method: 'HEAD', cache: 'no-store' })
+      .then(response => {
+        if (!response.ok) {
+          document.getElementById('android-download').setAttribute('aria-disabled', 'true');
+          document.getElementById('android-download').style.opacity = '.55';
+          document.getElementById('android-download').addEventListener('click', event => event.preventDefault());
+          document.getElementById('apk-unavailable').style.display = 'block';
+          document.getElementById('android-meta').textContent = 'Android APK · Release upload pending';
+        }
+      })
+      .catch(() => {
+        document.getElementById('apk-unavailable').style.display = 'block';
+      });
+  </script>
+</body>
+</html>
